@@ -20,8 +20,10 @@ function M.get(c, opts)
 		["@constant"]                   = "Constant",
 		["@constant.builtin"]           = { fg = c.darkOrange }, --  a boolean constant: TRUE, false
 		["@constant.macro"]             = "Define",
-		["@constructor"]                = { fg = c.orange }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@constructor.tsx"]            = { fg = c.orange },
+		["@constructor"]                = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@constructor.lua"]            = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua.
+		["@constructor.typescript"]     = { fg = c.purple },
+		["@constructor.tsx"]            = { fg = c.purple },
 		["@diff.delta"]                 = "DiffChange",
 		["@diff.minus"]                 = "DiffDelete",
 		["@diff.plus"]                  = "DiffAdd",
@@ -82,22 +84,21 @@ function M.get(c, opts)
 		["@string.regexp"]              = { fg = c.darkOrange }, -- For regexes.
 		["@string.special.url"]         = { fg = c.yellow, underline = true },
 		["@tag"]                        = { fg = c.purple },
-		["@tag.attribute"]              = { fg = c.veryLightPurple },
+		["@tag.attribute"]              = { fg = c.lightBlue },
 		["@tag.delimiter"]              = { fg = c.blue },
 		["@tag.delimiter.tsx"]          = "@tag.delimiter",
+		["@tag.builtin"]                = "@tag",
 		["@tag.tsx"]                    = { fg = c.yellow },
-		["@tag.builtin.tsx"]            = { fg = c.purple },
-		["@tag.javascript"]             = { fg = c.purple },
 		["@text.note"]                  = "Attention",
 		["@type"]                       = "Type",
 		["@type.builtin"]               = "Type",
 		["@type.definition"]            = "Typedef",
 		["@type.qualifier"]             = "@keyword",
-		["@variable"]                   = { fg = c.white },     -- Any variable name that does not have another highlight.
-		["@variable.builtin"]           = { fg = c.orange },    -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable"]                   = { fg = c.white }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"]           = { fg = c.orange }, -- Variable names that are defined by the languages, like `this` or `self`.
 		["@variable.member"]            = { fg = c.lightBlue }, -- For fields.
-		["@variable.parameter"]         = { fg = c.veryLightPurple }, -- For parameters of a function.
-		["@variable.parameter.builtin"] = { fg = c.veryLightPurple }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
+		["@variable.parameter"]         = { fg = c.pink }, -- For parameters of a function.
+		["@variable.parameter.builtin"] = { fg = c.pink }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
 	}
 
 	-- for i, color in ipairs(c.rainbow) do

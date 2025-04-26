@@ -2,9 +2,10 @@ local M = {}
 
 -- Plugin support definition.  Maps plugin names to highlight group names.
 M.plugins = {
-	["treesitter"] = "treesitter", -- Treesitter support
-	["telescope.nvim"] = "telescope", -- Telescope support
+	["treesitter"] = "treesitter",         -- Treesitter support
+	["telescope.nvim"] = "telescope",      -- Telescope support
 	["todo-comments.nvim"] = "todo-comments", -- Todo Comments support
+	["blink.cmp"] = "blink",               -- Blink support
 }
 
 --- Setup function for highlights.
@@ -14,12 +15,14 @@ M.plugins = {
 ---@param opts nightfall.Config: Configuration options for nightfall.
 ---@return nightfall.Highlights: A table of highlight groups to apply.
 function M.setup(colors, opts)
+	-- Enable/disable plugin highlights by default.
 	local groups = {
-		base = true, -- Always enable base highlights.
-		treesitter = true, -- Enable treesitter highlights by default.
-		lsp = true, -- Enable LSP highlights by default.
-		kinds = true, -- Enable kinds highlights by default.
-		["todo-comments"] = true, -- Enable todo-comments highlights by default.
+		base = true,
+		treesitter = true,
+		lsp = true,
+		kinds = true,
+		["todo-comments"] = true,
+		["blink"] = true,
 	}
 
 	-- Automatically enable plugin highlights if `opts.plugins.all` is true.
@@ -34,7 +37,7 @@ function M.setup(colors, opts)
 		for plugin, group in pairs(M.plugins) do
 			if plugins[plugin] then
 				-- Check if the plugin is loaded.
-				groups[group] = true -- Enable highlight group if plugin is loaded.
+				groups[group] = true                            -- Enable highlight group if plugin is loaded.
 				print("Nightfall: enabling " .. group .. " for " .. plugin) -- Print a message indicating the highlight group is enabled.
 			end
 		end
@@ -69,4 +72,3 @@ function M.setup(colors, opts)
 end
 
 return M -- Return the module.
-
