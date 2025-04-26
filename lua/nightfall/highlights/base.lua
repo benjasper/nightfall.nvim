@@ -4,8 +4,8 @@ local M = {}
 function M.get(c, opts)
 	-- stylua: ignore
 	return {
-		Comment                     = { fg = c.comment, bg = "NONE", italic = true }, -- any comment
-		ColorColumn                 = { bg = c.background1 },                                           -- used for the columns set with 'colorcolumn'
+		Comment                     = { fg = c.comment, bg = "NONE", italic = true, bold = false }, -- any comment
+		ColorColumn                 = { bg = c.background1 },                                 -- used for the columns set with 'colorcolumn'
 		-- Conceal                     = { fg = c.dark5 },                                           -- placeholder characters substituted for concealed text (see 'conceallevel')
 		-- Cursor                      = { fg = c.bg, bg = c.fg },                                   -- character under the cursor
 		-- lCursor                     = { fg = c.bg, bg = c.fg },                                   -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -22,9 +22,9 @@ function M.get(c, opts)
 		-- VertSplit                   = { fg = c.border },                                          -- the column separating vertically split windows
 		-- WinSeparator                = { fg = c.border, bold = true },                             -- the column separating vertically split windows
 		-- Folded                      = { fg = c.blue, bg = c.fg_gutter },                          -- line used for closed folds
-		-- FoldColumn                  = { bg = opts.transparent and c.none or c.bg, fg = c.comment }, -- 'foldcolumn'
-		-- SignColumn                  = { bg = opts.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
-		-- SignColumnSB                = { bg = c.bg_sidebar, fg = c.fg_gutter },                    -- column where |signs| are displayed
+		FoldColumn                  = { bg = c.background1, fg = c.comment }, -- 'foldcolumn'
+		SignColumn                  = { bg = c.background1, fg = c.gutter }, -- column where |signs| are displayed
+		SignColumnSB                = { bg = c.background1, fg = c.gutter }, -- column where |signs| are displayed
 		-- Substitute                  = { bg = c.red, fg = c.black },                               -- |:substitute| replacement text highlighting
 		-- LineNr                      = { fg = c.fg_gutter },                                       -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- CursorLineNr                = { fg = c.orange, bold = true },                             -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -70,25 +70,25 @@ function M.get(c, opts)
 		-- WinBar                      = "StatusLine",                                  -- window bar
 		-- WinBarNC                    = "StatusLineNC",                                -- window bar in inactive windows
 
-		Bold                        = { bold = true, fg = c.white },   -- (preferred) any bold text
-		Character                   = { fg = c.lightBlue },            --  a character constant: 'c', '\n'
-		Constant                    = { fg = c.darkOrange },           -- (preferred) any constant
-		Debug                       = { fg = c.orange },               --    debugging statements
-		Delimiter                   = "Special",                       --  character that needs attention
-		Error                       = { fg = c.error },                -- (preferred) any erroneous construct
-		Function                    = { fg = c.orange },               -- function name (also: methods for classes)
-		Identifier                  = { fg = c.white },                -- (preferred) any variable name
-		Italic                      = { italic = true, fg = c.white }, -- (preferred) any italic text
-		Keyword                     = { fg = c.purple, italic = true }, --  any other keyword
-		Operator                    = { fg = c.lightPurple },          -- "sizeof", "+", "*", etc.
+		Bold                        = { bold = true, fg = c.white },              -- (preferred) any bold text
+		Character                   = { fg = c.lightBlue },                       --  a character constant: 'c', '\n'
+		Constant                    = { fg = c.darkOrange },                      -- (preferred) any constant
+		Debug                       = { fg = c.orange },                          --    debugging statements
+		Delimiter                   = "Special",                                  --  character that needs attention
+		Error                       = { fg = c.error },                           -- (preferred) any erroneous construct
+		Function                    = { fg = c.blue },                            -- function name (also: methods for classes)
+		Identifier                  = { fg = c.white },                           -- (preferred) any variable name
+		Italic                      = { italic = true, fg = c.white },            -- (preferred) any italic text
+		Keyword                     = { fg = c.purple, italic = true },           --  any other keyword
+		Operator                    = { fg = c.purple },                          -- "sizeof", "+", "*", etc.
 		Boolean                     = "@constant.builtin",
-		PreProc                     = { fg = c.purple, italic = true }, -- (preferred) generic Preprocessor
-		Special                     = { fg = c.cyan },                 -- (preferred) any special symbol
-		Statement                   = "Keyword",                       -- (preferred) any statement
-		String                      = { fg = c.text },                 --   a string constant: "this is a string"
-		Todo                        = { bg = c.yellow, fg = c.background1 }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                        = { fg = c.yellow },               -- (preferred) int, long, char, etc.
-		Underlined                  = { underline = true },            -- (preferred) text that stands out, HTML links
+		PreProc                     = { fg = c.purple, italic = true },           -- (preferred) generic Preprocessor
+		Special                     = { fg = c.cyan },                            -- (preferred) any special symbol
+		Statement                   = "Keyword",                                  -- (preferred) any statement
+		String                      = { fg = c.text },                            --   a string constant: "this is a string"
+		Todo                        = { bg = c.attention, fg = c.attentionBackground }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Type                        = { fg = c.yellow },                          -- (preferred) int, long, char, etc.
+		Underlined                  = { underline = true },                       -- (preferred) text that stands out, HTML links
 		-- debugBreakpoint             = { bg = Util.blend_bg(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
 		-- debugPC                     = { bg = c.bg_sidebar },                         -- used for highlighting the current line in terminal-debug
 		dosIniLabel                 = "@property",
@@ -138,6 +138,9 @@ function M.get(c, opts)
 		-- diffLine                    = { fg = c.comment },
 		-- diffIndexLine               = { fg = c.magenta },
 		-- helpExample                 = { fg = c.comment },
+
+		-- CUSTOM HL GROUPS
+		Attention                   = { fg = c.attention, bg = c.attentionBackground },
 	}
 end
 
