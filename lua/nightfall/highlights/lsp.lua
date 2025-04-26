@@ -2,7 +2,7 @@ local M = {}
 
 ---@type nightfall.HighlightsFn
 function M.get(c)
-	-- stylua: ignore
+
 	return {
 		["@lsp.type.boolean"]                      = "@boolean",
 		["@lsp.type.builtinType"]                  = "@type.builtin",

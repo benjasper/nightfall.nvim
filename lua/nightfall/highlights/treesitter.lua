@@ -2,7 +2,6 @@ local M = {}
 
 ---@type nightfall.HighlightsFn
 function M.get(c, opts)
-	-- stylua: ignore
 	local ret = {
 		["@annotation"]                 = { fg = c.blue },
 		["@attribute"]                  = { fg = c.blue },
@@ -21,7 +20,7 @@ function M.get(c, opts)
 		["@constant.builtin"]           = { fg = c.darkOrange }, --  a boolean constant: TRUE, false
 		["@constant.macro"]             = "Define",
 		["@constructor"]                = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@constructor.lua"]            = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua.
+		["@constructor.lua"]            = "Special",       -- For constructor calls and definitions: = { } in Lua.
 		["@constructor.typescript"]     = { fg = c.purple },
 		["@constructor.tsx"]            = { fg = c.purple },
 		["@diff.delta"]                 = "DiffChange",
