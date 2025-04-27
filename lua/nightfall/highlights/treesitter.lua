@@ -17,7 +17,7 @@ function M.get(c, opts)
 		["@comment.todo"]               = "Attention",
 		["@comment.warning"]            = { fg = c.warning },
 		["@constant"]                   = "Constant",
-		["@constant.builtin"]           = { fg = c.darkOrange }, --  a boolean constant: TRUE, false
+		["@constant.builtin"]           = "Constant",
 		["@constant.macro"]             = "Define",
 		["@constructor"]                = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		["@constructor.lua"]            = "Special",       -- For constructor calls and definitions: = { } in Lua.
@@ -27,7 +27,7 @@ function M.get(c, opts)
 		["@diff.minus"]                 = "DiffDelete",
 		["@diff.plus"]                  = "DiffAdd",
 		["@function"]                   = "Function",
-		["@function.builtin"]           = "Function",
+		["@function.builtin"]           = "Constant",
 		["@function.call"]              = "@function",
 		["@function.macro"]             = "Macro",
 		["@function.method"]            = "Function",
@@ -80,7 +80,7 @@ function M.get(c, opts)
 		["@string"]                     = "String",
 		["@string.documentation"]       = { fg = c.yellow },
 		["@string.escape"]              = { fg = c.purple }, -- For escape characters within a string.
-		["@string.regexp"]              = { fg = c.darkOrange }, -- For regexes.
+		["@string.regexp"]              = { fg = c.orange }, -- For regexes.
 		["@string.special.url"]         = { fg = c.yellow, underline = true },
 		["@tag"]                        = { fg = c.purple },
 		["@tag.attribute"]              = { fg = c.lightBlue },

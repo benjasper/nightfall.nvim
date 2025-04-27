@@ -5,6 +5,9 @@ local M = {}
 
 -- Setup highlight groups
 function M.setup()
+end
+
+M.load = function()
 	local opts = require("nightfall.config")
 	opts.setup({})
 
@@ -17,6 +20,8 @@ function M.setup()
 
 	vim.o.termguicolors = true
 
+	vim.g.colors_name = "nightfall"
+
 	for hl, val in pairs(highlights) do
 		if type(val) == "string" then
 			val = { link = val }
@@ -24,10 +29,6 @@ function M.setup()
 
 		vim.api.nvim_set_hl(0, hl, val)
 	end
-end
-
-M.load = function()
-	vim.g.colors_name = "nightfall"
 end
 
 return M

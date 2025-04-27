@@ -7,11 +7,11 @@ function M.get(c)
 		BlinkCmpDocBorder = { fg = c.floatBorder },
 		BlinkCmpSignatureHelpBorder = { fg = c.floatBorder },
 
-		BlinkCmpLabel = { fg = c.white },
-		BlinkCmpLabelDeprecated = { fg = c.white, strikethrough = true },
+		BlinkCmpLabel = { fg = c.comment },
+		BlinkCmpLabelDeprecated = { fg = c.comment, strikethrough = true },
 
-		BlinkCmpLabelMatch = "Special",
-		BlinkCmpKindText = { fg = c.white },
+		BlinkCmpLabelMatch = { fg = c.white },
+		BlinkCmpKindText = { fg = c.comment },
 		BlinkCmpKindMethod = { fg = c.blue },
 		BlinkCmpKindFunction = { fg = c.blue },
 		BlinkCmpKindConstructor = { fg = c.blue },

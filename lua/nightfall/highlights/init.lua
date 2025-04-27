@@ -2,10 +2,11 @@ local M = {}
 
 -- Plugin support definition.  Maps plugin names to highlight group names.
 M.plugins = {
-	["treesitter"] = "treesitter",         -- Treesitter support
-	["telescope.nvim"] = "telescope",      -- Telescope support
-	["todo-comments.nvim"] = "todo-comments", -- Todo Comments support
-	["blink.cmp"] = "blink",               -- Blink support
+	["telescope.nvim"] = "telescope",          -- Telescope support
+	["todo-comments.nvim"] = "todo-comments",  -- Todo Comments support
+	["blink.cmp"] = "blink",                   -- Blink support
+	["render-markdown.nvim"] = "render-markdown", -- Render Markdown support
+	["neogit"] = "neogit",                -- Neogit support
 }
 
 --- Setup function for highlights.
@@ -16,12 +17,14 @@ M.plugins = {
 ---@return nightfall.Highlights: A table of highlight groups to apply.
 function M.setup(colors, opts)
 	-- Load groups that are not detected and configure the detected plugins automatically.
-	local groups = {
+	local baseGroups = {
 		base = true,
-		treesitter = true,
 		lsp = true,
 		kinds = true,
+		treesitter = true,
 	}
+
+	local groups = {}
 
 	-- Automatically enable plugin highlights if `opts.plugins.all` is true.
 	if opts.plugins.all then
@@ -54,8 +57,8 @@ function M.setup(colors, opts)
 
 	local ret = {} -- Table to store the resulting highlight groups.
 
-	-- Merge highlight groups from enabled plugins.
-	for group, enabled in pairs(groups) do
+	-- Load base highlight groups.
+	for group, enabled in pairs(baseGroups) do
 		if enabled then
 			-- If the group is enabled.
 			for hl, val in pairs(require("nightfall.highlights." .. group).get(colors, opts)) do
@@ -65,7 +68,18 @@ function M.setup(colors, opts)
 		end
 	end
 
+	-- Merge highlight groups from enabled plugins.
+	for group, enabled in pairs(groups) do
+		if enabled then
+			-- If the group is enabled.
+			for hl, val in pairs(require("nightfall.highlights.integrations." .. group).get(colors, opts)) do
+				-- Load the highlight group module and merge its highlights into the result.
+				ret[hl] = val
+			end
+		end
+	end
+
 	return ret -- Return the resulting highlight groups.
 end
 
-return M -- Return the module.
+return M

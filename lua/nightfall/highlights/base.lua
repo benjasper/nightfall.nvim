@@ -6,14 +6,14 @@ local M = {}
 function M.get(c, opts)
 	return {
 		Comment                     = { fg = c.comment, bg = "NONE", italic = true, bold = false }, -- any comment
-		ColorColumn                 = { bg = c.backgroundLight },                                  -- used for the columns set with 'colorcolumn'
+		ColorColumn                 = { bg = c.backgroundLight },                             -- used for the columns set with 'colorcolumn'
 		-- Conceal                     = { fg = c.dark5 },                                           -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor                      = { fg = c.background, bg = c.white },                    -- character under the cursor
 		-- lCursor                     = { fg = c.bg, bg = c.fg },                                   -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM                    = { fg = c.bg, bg = c.fg },                                   -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn                = { bg = c.bg_highlight },                                    -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine                  = { bg = c.backgroundLight }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory                   = { fg = c.blue },      -- directory names (and other special names in listings)
+		CursorLine                  = { bg = c.backgroundLighter }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory                   = { fg = c.blue },        -- directory names (and other special names in listings)
 		-- DiffAdd                     = { bg = c.diff.add },                                        -- diff mode: Added line |diff.txt|
 		-- DiffChange                  = { bg = c.diff.change },                                     -- diff mode: Changed line |diff.txt|
 		-- DiffDelete                  = { bg = c.diff.delete },                                     -- diff mode: Deleted line |diff.txt|
@@ -42,7 +42,7 @@ function M.get(c, opts)
 		-- NormalSB                    = { fg = c.fg_sidebar, bg = c.bg_sidebar },                                               -- normal text in sidebar
 		NormalFloat                 = { fg = c.white, bg = c.background }, -- Normal text in floating windows.
 		FloatBorder                 = { fg = c.floatBorder, bg = c.background },
-		FloatTitle                  = { fg = c.white, bg = c.backgroundFloat },
+		FloatTitle                  = { fg = c.white, bg = c.background },
 		Pmenu                       = { bg = c.background, fg = c.white },       -- Popup menu: normal item.
 		PmenuSel                    = { bg = Util.blend_bg(c.selection, 0.8) },  -- Popup menu: selected item.
 		PmenuSbar                   = { bg = Util.blend_fg(c.backgroundLight, 0.95) }, -- Popup menu: scrollbar.
@@ -73,7 +73,7 @@ function M.get(c, opts)
 
 		Bold                        = { bold = true, fg = c.white },              -- (preferred) any bold text
 		Character                   = { fg = c.lightBlue },                       --  a character constant: 'c', '\n'
-		Constant                    = { fg = c.darkOrange },                      -- (preferred) any constant
+		Constant                    = { fg = c.orange },                          -- (preferred) any constant
 		Debug                       = { fg = c.orange },                          --    debugging statements
 		Delimiter                   = "Special",                                  --  character that needs attention
 		Error                       = { fg = c.error },                           -- (preferred) any erroneous construct
@@ -107,7 +107,7 @@ function M.get(c, opts)
 		LspSignatureActiveParameter = { bg = c.whiteDark, bold = true },
 		LspCodeLens                 = { fg = c.comment },
 		LspInlayHint                = { bg = c.bgInlay, fg = c.inlay },
-		LspInfoBorder               = { fg = c.floatBorder, bg = c.backgroundFloat },
+		LspInfoBorder               = { fg = c.floatBorder, bg = c.background },
 
 		-- diagnostics
 		DiagnosticError             = { fg = c.error },                                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default

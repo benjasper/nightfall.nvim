@@ -26,7 +26,7 @@ return {
     c = {bg = colors.background, fg = colors.orange},
   },
   inactive = {
-    a = {bg = colors.background, fg = colors.backgroundFloat, gui = 'bold'},
+    a = {bg = colors.background, fg = colors.background, gui = 'bold'},
     b = {bg = colors.background, fg = colors.lightBlue},
     c = {bg = colors.background, fg = colors.lightBlue},
   }
