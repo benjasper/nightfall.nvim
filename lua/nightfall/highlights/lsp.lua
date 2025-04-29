@@ -38,7 +38,7 @@ function M.get(c)
 		["@lsp.typemod.keyword.injected"]          = "@keyword",
 		["@lsp.type.macro"]                        = "@function.builtin",
 		["@lsp.typemod.macro.defaultLibrary"]      = "@function.builtin",
-		["@lsp.typemod.method.defaultLibrary"]     = "@function.builtin",
+		["@lsp.typemod.method.defaultLibrary"]     = "Function",
 		["@lsp.typemod.operator.injected"]         = "@operator",
 		["@lsp.typemod.string.injected"]           = "@string",
 		["@lsp.typemod.struct.defaultLibrary"]     = "@type.builtin",
