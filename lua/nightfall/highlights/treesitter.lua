@@ -27,7 +27,7 @@ function M.get(c, opts)
 		["@diff.minus"]                 = "DiffDelete",
 		["@diff.plus"]                  = "DiffAdd",
 		["@function"]                   = "Function",
-		["@function.builtin"]           = "Constant",
+		["@function.builtin"]           = { fg = c.orange, italic = true },
 		["@function.call"]              = "@function",
 		["@function.macro"]             = "Macro",
 		["@function.method"]            = "Function",

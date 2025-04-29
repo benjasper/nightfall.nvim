@@ -2,7 +2,6 @@ local M = {}
 
 ---@type nightfall.HighlightsFn
 function M.get(c)
-
 	return {
 		["@lsp.type.boolean"]                      = "@boolean",
 		["@lsp.type.builtinType"]                  = "@type.builtin",
@@ -39,6 +38,7 @@ function M.get(c)
 		["@lsp.type.macro"]                        = "@function.builtin",
 		["@lsp.typemod.macro.defaultLibrary"]      = "@function.builtin",
 		["@lsp.typemod.method.defaultLibrary"]     = "Function",
+		["@lsp.typemod.method.definition"]         = { fg = c.blue, italic = true },
 		["@lsp.typemod.operator.injected"]         = "@operator",
 		["@lsp.typemod.string.injected"]           = "@string",
 		["@lsp.typemod.struct.defaultLibrary"]     = "@type.builtin",
