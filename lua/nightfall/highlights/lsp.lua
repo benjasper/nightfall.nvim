@@ -46,6 +46,7 @@ function M.get(c)
 		["@lsp.typemod.variable.callable"]         = "@function",
 		["@lsp.typemod.variable.defaultLibrary"]   = "@variable.builtin",
 		["@lsp.typemod.variable.injected"]         = "@variable",
+		["@lsp.typemod.variable.readonly"]         = "@constant",
 		["@lsp.typemod.attributeBracket"]          = "@attribute",
 	}
 end

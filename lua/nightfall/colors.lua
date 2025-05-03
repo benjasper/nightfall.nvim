@@ -13,6 +13,7 @@ local palette = {
 	attentionBackground = "#2D3247",
 
 	floatBorder = "#4A4C5F",
+	bloatBackground = "#2E303E",
 
 	bgInlay = "#262A3B",
 	inlay = "#A9B8E7",
@@ -21,6 +22,7 @@ local palette = {
 	gutter = "#505868",
 	white = "#D5D8DA",
 	whiteDark = "#BFC7D7",
+	silver = "#84A1BC",
 	text = "#64D1A9",
 	yellow = "#FFD88C",
 	purple = "#BAACFF",
