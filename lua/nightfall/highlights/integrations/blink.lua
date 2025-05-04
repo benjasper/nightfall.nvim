@@ -16,9 +16,9 @@ function M.get(c)
 		BlinkCmpKindFunction = { fg = c.blue },
 		BlinkCmpKindConstructor = { fg = c.blue },
 		BlinkCmpKindField = { fg = c.green },
-		BlinkCmpKindVariable = { fg = c.text },
+		BlinkCmpKindVariable = { fg = c.green },
 		BlinkCmpKindClass = { fg = c.yellow },
-		BlinkCmpKindInterface = { fg = c.text },
+		BlinkCmpKindInterface = { fg = c.green },
 		BlinkCmpKindModule = { fg = c.cyan },
 		BlinkCmpKindProperty = { fg = c.lightBlue },
 		BlinkCmpKindUnit = { fg = c.green },
@@ -27,7 +27,7 @@ function M.get(c)
 		BlinkCmpKindKeyword = { fg = c.purple },
 		BlinkCmpKindSnippet = { fg = c.pink },
 		BlinkCmpKindFile = { fg = c.blue },
-		BlinkCmpKindReference = { fg = c.text },
+		BlinkCmpKindReference = { fg = c.green },
 		BlinkCmpKindFolder = { fg = c.blue },
 		BlinkCmpKindEnumMember = { fg = c.cyan },
 		BlinkCmpKindConstant = { fg = c.orange },
@@ -35,7 +35,7 @@ function M.get(c)
 		BlinkCmpKindEvent = { fg = c.blue },
 		BlinkCmpKindOperator = { fg = c.purple },
 		BlinkCmpKindTypeParameter = { fg = c.yellow },
-		BlinkCmpKindCopilot = { fg = c.text },
+		BlinkCmpKindCopilot = { fg = c.green },
 	}
 end
 

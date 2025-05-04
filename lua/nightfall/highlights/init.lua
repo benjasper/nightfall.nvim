@@ -6,7 +6,8 @@ M.plugins = {
 	["todo-comments.nvim"] = "todo-comments",  -- Todo Comments support
 	["blink.cmp"] = "blink",                   -- Blink support
 	["render-markdown.nvim"] = "render-markdown", -- Render Markdown support
-	["neogit"] = "neogit",                -- Neogit support
+	["neogit"] = "neogit",                     -- Neogit support
+	["gitsigns.nvim"] = "gitsigns",            -- Gitsigns support
 }
 
 --- Setup function for highlights.

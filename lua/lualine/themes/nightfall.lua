@@ -6,9 +6,9 @@ return {
     c = {bg = colors.background, fg = colors.lightBlue},
   },
   insert = {
-    a = {bg = colors.text, fg = colors.background, gui = 'bold'},
-    b = {bg = colors.backgroundLighter, fg = colors.text},
-    c = {bg = colors.background, fg = colors.text},
+    a = {bg = colors.green, fg = colors.background, gui = 'bold'},
+    b = {bg = colors.backgroundLighter, fg = colors.green},
+    c = {bg = colors.background, fg = colors.green},
   },
   visual = {
     a = {bg = colors.white, fg = colors.background, gui = 'bold'},

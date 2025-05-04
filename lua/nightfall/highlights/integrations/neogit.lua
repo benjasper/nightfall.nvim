@@ -13,7 +13,7 @@ function M.get(c)
 			bold = true,
 		},
 		NeogitRemote = {
-			fg = c.text,
+			fg = c.green,
 			bold = true,
 		},
 		NeogitUnmergedInto = {
@@ -47,7 +47,7 @@ function M.get(c)
 			bold = true,
 		},
 		NeogitChangeDeleted = {
-			fg = c.error,
+			fg = c.red,
 			bold = true,
 		},
 		NeogitChangeAdded = {
@@ -113,10 +113,10 @@ function M.get(c)
 			fg = c.yellow,
 		},
 		NeogitNotificationError = {
-			fg = c.error,
+			fg = c.red,
 		},
 		NeogitGraphRed = {
-			fg = c.error,
+			fg = c.red,
 		},
 		NeogitGraphWhite = {
 			fg = c.background,
@@ -143,7 +143,7 @@ function M.get(c)
 			fg = c.orange,
 		},
 		NeogitGraphBoldRed = {
-			fg = c.error,
+			fg = c.red,
 			bold = true,
 		},
 		NeogitGraphBoldWhite = {
