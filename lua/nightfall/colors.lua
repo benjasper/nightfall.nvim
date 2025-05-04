@@ -13,7 +13,6 @@ local palette = {
 	attentionBackground = "#2D3247",
 
 	floatBorder = "#4A4C5F",
-	bloatBackground = "#2E303E",
 
 	bgInlay = "#262A3B",
 	inlay = "#A9B8E7",

@@ -7,7 +7,7 @@ local M = {}
 function M.get(c)
 	local groups = {
 		RenderMarkdownCode = { bg = c.background },
-		RenderMarkdownCodeInline = { bg = c.backgroundLighter },
+		RenderMarkdownCodeInline = { bg = c.bgInlay },
 		-- RenderMarkdownBullet = { fg = C.sky },
 		-- RenderMarkdownTableHead = { fg = C.blue },
 		-- RenderMarkdownTableRow = { fg = C.lavender },

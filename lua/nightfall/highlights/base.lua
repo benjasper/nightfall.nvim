@@ -12,26 +12,26 @@ function M.get(c, opts)
 		-- lCursor                     = { fg = c.bg, bg = c.fg },                                   -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM                    = { fg = c.bg, bg = c.fg },                                   -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn                = { bg = c.bg_highlight },                                    -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine                  = { bg = c.backgroundLighter },                -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory                   = { fg = c.blue },                             -- directory names (and other special names in listings)
-		Added                       = { fg = c.green },                            -- diff mode: Added line |diff.txt|
-		Modified                    = { fg = c.cyan },                             -- diff mode: Changed line |diff.txt|
-		Deleted                     = { fg = c.red },                            -- diff mode: Deleted line |diff.txt|
+		CursorLine                  = { bg = c.backgroundLighter },                     -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory                   = { fg = c.blue },                                  -- directory names (and other special names in listings)
+		Added                       = { fg = c.green },                                 -- diff mode: Added line |diff.txt|
+		Modified                    = { fg = c.cyan },                                  -- diff mode: Changed line |diff.txt|
+		Deleted                     = { fg = c.red },                                   -- diff mode: Deleted line |diff.txt|
 		DiffAdd                     = { bg = Util.darken(c.green, 0.18, c.background) }, -- diff mode: Added line |diff.txt|
 		DiffChange                  = { bg = Util.darken(c.blue, 0.07, c.background) }, -- diff mode: Changed line |diff.txt|
-		DiffDelete                  = { bg = Util.darken(c.red, 0.18, c.background) }, -- diff mode: Deleted line |diff.txt|
+		DiffDelete                  = { bg = Util.darken(c.red, 0.18, c.background) },  -- diff mode: Deleted line |diff.txt|
 		DiffText                    = { bg = Util.darken(c.blue, 0.30, c.background) }, -- diff mode: Changed text within a changed line |diff.txt|
-		EndOfBuffer                 = { fg = c.background },                       -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg                    = { fg = c.red },                            -- error messages on the command line
-		VertSplit                   = { fg = c.floatBorder },                      -- the column separating vertically split windows
-		WinSeparator                = { fg = c.floatBorder, bold = true },         -- the column separating vertically split windows
+		EndOfBuffer                 = { fg = c.background },                            -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		ErrorMsg                    = { fg = c.red },                                   -- error messages on the command line
+		VertSplit                   = { fg = c.floatBorder, bg = c.background },        -- the column separating vertically split windows
+		WinSeparator                = { fg = c.floatBorder, bg = c.background, bold = true }, -- the column separating vertically split windows
 		-- Folded                      = { fg = c.blue, bg = c.fg_gutter },                          -- line used for closed folds
-		FoldColumn                  = { bg = c.background, fg = c.comment },       -- 'foldcolumn'
-		SignColumn                  = { bg = c.background, fg = c.gutter },        -- column where |signs| are displayed
-		SignColumnSB                = { bg = c.background, fg = c.gutter },        -- column where |signs| are displayed
+		FoldColumn                  = { bg = c.background, fg = c.comment },            -- 'foldcolumn'
+		SignColumn                  = { bg = c.background, fg = c.gutter },             -- column where |signs| are displayed
+		SignColumnSB                = { bg = c.background, fg = c.gutter },             -- column where |signs| are displayed
 		-- Substitute                  = { bg = c.red, fg = c.black },                               -- |:substitute| replacement text highlighting
-		LineNr                      = { fg = c.gutter },                           -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr                = { fg = c.white, bold = true },               -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		LineNr                      = { fg = c.gutter },                                -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		CursorLineNr                = { fg = c.white, bold = true },                    -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		LineNrAbove                 = { fg = c.gutter },
 		LineNrBelow                 = { fg = c.gutter },
 		MatchParen                  = { bg = c.selection, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -60,8 +60,8 @@ function M.get(c, opts)
 		SpellCap                    = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal                  = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare                   = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		-- StatusLine                  = { fg = c.fg_sidebar, bg = c.bg_statusline },   -- status line of current window
-		-- StatusLineNC                = { fg = c.fg_gutter, bg = c.bg_statusline },    -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine                  = { fg = c.gutter, bg = c.none }, -- status line of current window
+		StatusLineNC                = { fg = c.gutter, bg = c.none }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- TabLine                     = { bg = c.bg_statusline, fg = c.fg_gutter },    -- tab pages line, not active tab page label
 		-- TabLineFill                 = { bg = c.black },                              -- tab pages line, where there are no labels
 		-- TabLineSel                  = { fg = c.black, bg = c.blue },                 -- tab pages line, active tab page label
@@ -79,7 +79,7 @@ function M.get(c, opts)
 		Constant                    = { fg = c.orange },                          -- (preferred) any constant
 		Debug                       = { fg = c.orange },                          --    debugging statements
 		Delimiter                   = "Special",                                  --  character that needs attention
-		Error                       = { fg = c.red },                           -- (preferred) any erroneous construct
+		Error                       = { fg = c.red },                             -- (preferred) any erroneous construct
 		Function                    = { fg = c.blue },                            -- function name (also: methods for classes)
 		Identifier                  = { fg = c.white },                           -- (preferred) any variable name
 		Italic                      = { italic = true, fg = c.white },            -- (preferred) any italic text
@@ -89,7 +89,7 @@ function M.get(c, opts)
 		PreProc                     = { fg = c.purple, italic = true },           -- (preferred) generic Preprocessor
 		Special                     = { fg = c.cyan },                            -- (preferred) any special symbol
 		Statement                   = "Keyword",                                  -- (preferred) any statement
-		String                      = { fg = c.green },                            --   a string constant: "this is a string"
+		String                      = { fg = c.green },                           --   a string constant: "this is a string"
 		Todo                        = { bg = c.attention, fg = c.attentionBackground }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Type                        = { fg = c.yellow },                          -- (preferred) int, long, char, etc.
 		Underlined                  = { underline = true },                       -- (preferred) text that stands out, HTML links
@@ -113,16 +113,16 @@ function M.get(c, opts)
 		LspInfoBorder               = { fg = c.floatBorder, bg = c.background },
 
 		-- diagnostics
-		DiagnosticError             = { fg = c.red },                                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError             = { fg = c.red },                                   -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn              = { fg = c.warning },                               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticInfo              = { fg = c.info },                                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticHint              = { fg = c.hint },                                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		-- DiagnosticUnnecessary       = { fg = c.terminal_black },                          -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextError  = { bg = Util.blend_bg(c.red, 0.1), fg = c.red }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextError  = { bg = Util.blend_bg(c.red, 0.1), fg = c.red },   -- Used for "Error" diagnostic virtual text
 		DiagnosticVirtualTextWarn   = { bg = Util.blend_bg(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
 		DiagnosticVirtualTextInfo   = { bg = Util.blend_bg(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
 		DiagnosticVirtualTextHint   = { bg = Util.blend_bg(c.hint, 0.1), fg = c.hint }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticUnderlineError    = { undercurl = true, sp = c.red },               -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineError    = { undercurl = true, sp = c.red },                 -- Used to underline "Error" diagnostics
 		DiagnosticUnderlineWarn     = { undercurl = true, sp = c.warning },             -- Used to underline "Warning" diagnostics
 		DiagnosticUnderlineInfo     = { undercurl = true, sp = c.info },                -- Used to underline "Information" diagnostics
 		DiagnosticUnderlineHint     = { undercurl = true, sp = c.hint },                -- Used to underline "Hint" diagnostics

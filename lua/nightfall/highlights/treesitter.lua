@@ -20,7 +20,7 @@ function M.get(c, opts)
 		["@constant.builtin"]           = "Constant",
 		["@constant.macro"]             = "Define",
 		["@constructor"]                = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@constructor.lua"]            = "Special",       -- For constructor calls and definitions: = { } in Lua.
+		["@constructor.lua"]            = "Special",   -- For constructor calls and definitions: = { } in Lua.
 		["@constructor.typescript"]     = { fg = c.purple },
 		["@constructor.tsx"]            = { fg = c.purple },
 		["@diff.delta"]                 = "DiffChange",
@@ -61,8 +61,8 @@ function M.get(c, opts)
 		-- ["@markup.list.markdown"]       = { fg = c.orange, bold = true },
 		-- ["@markup.list.unchecked"]      = { fg = c.blue }, -- For brackets and parens.
 		["@markup.math"]                = "Special",
-		["@markup.raw"]                 = "String",
-		-- ["@markup.raw.markdown_inline"] = { bg = c.terminal_black, fg = c.blue },
+		["@markup.raw"]                 = { fg = c.white },
+		["@markup.raw.markdown_inline"] = { fg = c.white },
 		["@markup.strikethrough"]       = { strikethrough = true },
 		["@markup.strong"]              = { bold = true },
 		["@markup.underline"]           = { underline = true },
