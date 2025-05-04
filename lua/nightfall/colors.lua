@@ -8,14 +8,12 @@ local palette = {
 	selection = "#2E3341",
 	backgroundLight = "#2E3139",
 	backgroundLighter = "#2A2C37",
+	backgroundInlay = "#262A3B",
 
 	attention = "#B4F9F8",
 	attentionBackground = "#2D3247",
 
 	floatBorder = "#4A4C5F",
-
-	bgInlay = "#262A3B",
-	inlay = "#A9B8E7",
 
 	comment = "#7E8EDA",
 	gutter = "#505868",

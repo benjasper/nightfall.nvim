@@ -107,9 +107,9 @@ function M.get(c, opts)
 		LspReferenceText            = { bg = c.selection }, -- used for highlighting "text" references
 		LspReferenceRead            = { bg = c.selection }, -- used for highlighting "read" references
 		LspReferenceWrite           = { bg = c.selection }, -- used for highlighting "write" references
-		LspSignatureActiveParameter = { bg = c.whiteDark, bold = true },
+		LspSignatureActiveParameter = { bg = c.selection, bold = false },
 		LspCodeLens                 = { fg = c.comment },
-		LspInlayHint                = { bg = c.bgInlay, fg = c.inlay },
+		LspInlayHint                = { bg = c.backgroundInlay, fg = c.lightBlue },
 		LspInfoBorder               = { fg = c.floatBorder, bg = c.background },
 
 		-- diagnostics
