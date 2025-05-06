@@ -19,10 +19,7 @@ function M.get(c, opts)
 		["@constant"]                   = "Constant",
 		["@constant.builtin"]           = "Constant",
 		["@constant.macro"]             = "Define",
-		["@constructor"]                = { fg = c.purple }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@constructor.lua"]            = "Special",   -- For constructor calls and definitions: = { } in Lua.
-		["@constructor.typescript"]     = { fg = c.purple },
-		["@constructor.tsx"]            = { fg = c.purple },
+		["@constructor"]                = "Special",   -- For constructor calls and definitions: = { } in Lua.
 		["@diff.delta"]                 = "DiffChange",
 		["@diff.minus"]                 = "DiffDelete",
 		["@diff.plus"]                  = "DiffAdd",
@@ -74,7 +71,7 @@ function M.get(c, opts)
 		["@number.float"]               = "Float",
 		["@operator"]                   = { fg = c.purple }, -- For any operator: `+`, but also `->` and `*` in C.
 		["@property"]                   = { fg = c.lightBlue },
-		["@punctuation.bracket"]        = { fg = c.cyan }, -- For brackets and parens.
+		["@punctuation.bracket"]        = { fg = c.lightBlue }, -- For brackets and parens.
 		["@punctuation.delimiter"]      = { fg = c.lightBlue }, -- For delimiters ie: `.`
 		["@punctuation.special"]        = { fg = c.lightBlue }, -- For special symbols (e.g. `{}` in string interpolation)
 		["@string"]                     = "String",
