@@ -12,7 +12,7 @@ function M.get(c, opts)
 		-- lCursor                     = { fg = c.bg, bg = c.fg },                                   -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM                    = { fg = c.bg, bg = c.fg },                                   -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn                = { bg = c.bg_highlight },                                    -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine                  = { bg = c.backgroundLighter },                     -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine                  = { bg = Util.blend_bg(c.selection, 0.4, c.background) },                     -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		Directory                   = { fg = c.blue },                                  -- directory names (and other special names in listings)
 		Added                       = { fg = c.green },                                 -- diff mode: Added line |diff.txt|
 		Modified                    = { fg = c.cyan },                                  -- diff mode: Changed line |diff.txt|

@@ -5,9 +5,9 @@ local palette = {
 
 	background = "#1C1E26",
 
-	selection = "#2F303C",
-	backgroundLight = "#2E3139",
-	backgroundLighter = "#2A2C37",
+	selection = "#2F3341",
+	backgroundLight = "#242631",
+
 	backgroundInlay = "#262A3B",
 
 	attention = "#B4F9F8",
