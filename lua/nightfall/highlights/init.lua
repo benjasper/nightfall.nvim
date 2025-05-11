@@ -8,7 +8,8 @@ M.plugins = {
 	["render-markdown.nvim"] = "render-markdown", -- Render Markdown support
 	["neogit"] = "neogit",                     -- Neogit support
 	["gitsigns.nvim"] = "gitsigns",            -- Gitsigns support
-	["mini.icons"] = "mini-icons"
+	["mini.icons"] = "mini-icons",
+	["nvim-dap"] = "dap"
 }
 
 --- Setup function for highlights.
