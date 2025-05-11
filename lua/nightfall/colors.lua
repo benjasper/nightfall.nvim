@@ -3,9 +3,9 @@
 local palette = {
 	none = "NONE",
 
-	background = "#1c1e26",
+	background = "#1C1E26",
 
-	selection = "#2E3341",
+	selection = "#2F303C",
 	backgroundLight = "#2E3139",
 	backgroundLighter = "#2A2C37",
 	backgroundInlay = "#262A3B",
@@ -17,7 +17,7 @@ local palette = {
 
 	comment = "#7E8EDA",
 	gutter = "#505868",
-	white = "#D5D8DA",
+	white = "#D6D8DA",
 	whiteDark = "#BFC7D7",
 	silver = "#84A1BC",
 	yellow = "#FFD88C",
@@ -29,7 +29,7 @@ local palette = {
 	blue = "#70B0FF",
 	cyan = "#7FDAFF",
 
-	green = "#64D1A9",
+	green = "#64D1A8",
 	red = "#FF5370",
 	warning = "#EFC490",
 	info = "#9AC9E3",
