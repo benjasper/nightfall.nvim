@@ -4,6 +4,7 @@ local palette = {
 	none = "NONE",
 
 	background = "#1C1E26",
+	backgroundAlt = "#232530",
 
 	selection = "#2F3341",
 	backgroundLight = "#242631",

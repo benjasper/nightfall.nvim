@@ -24,8 +24,8 @@ function M.get(c, opts)
 		EndOfBuffer                 = { fg = c.background },                            -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg                    = { fg = c.red },                                   -- error messages on the command line
 		VertSplit                   = { fg = c.floatBorder, bg = c.background },        -- the column separating vertically split windows
-		WinSeparator                = { fg = c.floatBorder, bg = c.background, bold = true }, -- the column separating vertically split windows
-		-- Folded                      = { fg = c.blue, bg = c.fg_gutter },                          -- line used for closed folds
+		WinSeparator                = { fg = c.floatBorder, bg = c.background }, -- the column separating vertically split windows
+		Folded                      = { fg = c.blue, bg = c.background },                          -- line used for closed folds
 		FoldColumn                  = { bg = c.background, fg = c.comment },            -- 'foldcolumn'
 		SignColumn                  = { bg = c.background, fg = c.gutter },             -- column where |signs| are displayed
 		SignColumnSB                = { bg = c.background, fg = c.gutter },             -- column where |signs| are displayed
@@ -62,17 +62,17 @@ function M.get(c, opts)
 		SpellRare                   = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine                  = { fg = c.gutter, bg = c.none }, -- status line of current window
 		StatusLineNC                = { fg = c.gutter, bg = c.none }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		-- TabLine                     = { bg = c.bg_statusline, fg = c.fg_gutter },    -- tab pages line, not active tab page label
-		-- TabLineFill                 = { bg = c.black },                              -- tab pages line, where there are no labels
-		-- TabLineSel                  = { fg = c.black, bg = c.blue },                 -- tab pages line, active tab page label
-		-- Title                       = { fg = c.blue, bold = true },                  -- titles for output from ":set all", ":autocmd" etc.
+		TabLine                     = { bg = c.backgroundAlt, fg = c.white },    -- tab pages line, not active tab page label
+		TabLineFill                 = { bg = c.backgroundAlt },                              -- tab pages line, where there are no labels
+		TabLineSel                  = { fg = c.backgroundAlt, bg = c.blue },                 -- tab pages line, active tab page label
+		Title                       = { fg = c.blue, bold = true },                  -- titles for output from ":set all", ":autocmd" etc.
 		Visual                      = { bg = c.selection }, -- Visual mode selection
 		VisualNOS                   = { bg = c.selection }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg                  = { fg = c.warning }, -- warning messages
 		-- Whitespace                  = { fg = c.fg_gutter },                          -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- WildMenu                    = { bg = c.bg_visual },                          -- current match in 'wildmenu' completion
-		-- WinBar                      = "StatusLine",                                  -- window bar
-		-- WinBarNC                    = "StatusLineNC",                                -- window bar in inactive windows
+		WinBar                      = "StatusLine",                                  -- window bar
+		WinBarNC                    = "StatusLineNC",                                -- window bar in inactive windows
 
 		Bold                        = { bold = true, fg = c.white },              -- (preferred) any bold text
 		Character                   = { fg = c.lightBlue },                       --  a character constant: 'c', '\n'
