@@ -87,7 +87,7 @@ function M.get(c, opts)
 		["@tag.tsx"]                    = { fg = c.yellow },
 		["@text.note"]                  = "Attention",
 		["@type"]                       = "Type",
-		["@type.builtin"]               = "Type",
+		["@type.builtin"]               = { fg = c.purpleDark, italic = true },
 		["@type.definition"]            = "Typedef",
 		["@type.qualifier"]             = "@keyword",
 		["@variable"]                   = { fg = c.white }, -- Any variable name that does not have another highlight.
