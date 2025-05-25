@@ -43,7 +43,7 @@ function M.get(c)
 			bg = c.backgroundLight,
 		},
 		NeogitChangeModified = {
-			fg = c.blue,
+			fg = c.cyan,
 			bold = true,
 		},
 		NeogitChangeDeleted = {

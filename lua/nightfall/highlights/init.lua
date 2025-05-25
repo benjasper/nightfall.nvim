@@ -9,7 +9,8 @@ M.plugins = {
 	["neogit"] = "neogit",                     -- Neogit support
 	["gitsigns.nvim"] = "gitsigns",            -- Gitsigns support
 	["mini.icons"] = "mini-icons",
-	["nvim-dap"] = "dap"
+	["nvim-dap"] = "dap",
+	["snacks.nvim"] = "snacks",
 }
 
 --- Setup function for highlights.
