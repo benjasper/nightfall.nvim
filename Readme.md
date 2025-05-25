@@ -44,7 +44,8 @@ If you want to contribute to this project, you can do so by forking the reposito
 You can easily build an integration for a plugin by adding a new file to the `lua/nightfall/highlights/integrations` directory.
 As you can see in other integrations, they always return a set of highlight groups.
 
-After you have created your integration, you can add it to the `lua/nightfall/highlights/init.lua` file.
+After you have created your integration, you can add it to the `lua/nightfall/highlights/init.lua` file:
+At the top you'll find a table, that maps the exact plugin name to the filename. Simply enter your newly created file.
 
 ## 📝 License
 [MIT](LICENSE)
