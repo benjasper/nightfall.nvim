@@ -1,17 +1,25 @@
 local palette = require("nightfall.colors")
 
 -- nightfall.lua
-local M = {}
+local M = {
+	---@type table<string, nightfall.Highlight>
+	highlights = {},
+}
 
 -- Setup highlight groups
 function M.setup()
-end
-
-M.load = function()
 	local opts = require("nightfall.config")
 	opts.setup({})
 
 	local highlights = require("nightfall.highlights").setup(palette, opts.options)
+	M.highlights = highlights
+end
+
+M.load = function()
+	if M.highlights == nil then
+		vim.notify("Nightfall: Highlights not loaded yet. Call setup() first.", vim.log.levels.ERROR)
+		return
+	end
 
 	-- only needed to clear when not the default colorscheme
 	if vim.g.colors_name then
@@ -22,7 +30,7 @@ M.load = function()
 
 	vim.g.colors_name = "nightfall"
 
-	for hl, val in pairs(highlights) do
+	for hl, val in pairs(M.highlights) do
 		if type(val) == "string" then
 			val = { link = val }
 		end

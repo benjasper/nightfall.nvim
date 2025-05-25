@@ -60,8 +60,8 @@ function M.get(c, opts)
 		SpellCap                    = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal                  = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare                   = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                  = { fg = c.gutter, bg = c.none }, -- status line of current window
-		StatusLineNC                = { fg = c.gutter, bg = c.none }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine                  = { fg = c.whiteDark, bg = c.none }, -- status line of current window
+		StatusLineNC                = { fg = c.whiteDark, bg = c.none }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine                     = { bg = c.backgroundAlt, fg = c.white },    -- tab pages line, not active tab page label
 		TabLineFill                 = { bg = c.backgroundAlt },                              -- tab pages line, where there are no labels
 		TabLineSel                  = { fg = c.backgroundAlt, bg = c.blue },                 -- tab pages line, active tab page label
@@ -76,7 +76,7 @@ function M.get(c, opts)
 
 		Bold                        = { bold = true, fg = c.white },              -- (preferred) any bold text
 		Character                   = { fg = c.lightBlue },                       --  a character constant: 'c', '\n'
-		Constant                    = { fg = c.orange },                          -- (preferred) any constant
+		Constant                    = { fg = c.darkOrange },                          -- (preferred) any constant
 		Debug                       = { fg = c.orange },                          --    debugging statements
 		Delimiter                   = "Special",                                  --  character that needs attention
 		Error                       = { fg = c.red },                             -- (preferred) any erroneous construct
@@ -85,7 +85,7 @@ function M.get(c, opts)
 		Italic                      = { italic = true, fg = c.white },            -- (preferred) any italic text
 		Keyword                     = { fg = c.purple, italic = true },           --  any other keyword
 		Operator                    = { fg = c.purple },                          -- "sizeof", "+", "*", etc.
-		Boolean                     = "@constant.builtin",
+		Boolean                     = { fg = c.darkOrange },
 		PreProc                     = { fg = c.purple, italic = true },           -- (preferred) generic Preprocessor
 		Special                     = { fg = c.cyan },                            -- (preferred) any special symbol
 		Statement                   = "Keyword",                                  -- (preferred) any statement
