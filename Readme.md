@@ -6,10 +6,8 @@ A clean, modern, dark neovim theme.
 
 </div>
 
-While not a 1:1 port of [coeiico's nightfall theme for Jetbrains IDEs](https://github.com/coeiico/jetbrains-nightfall-theme), this theme is heavily inspired by it. 
+While not a 1:1 port of coeiico's [Nightfall](https://github.com/coeiico/jetbrains-nightfall-theme) for Jetbrains IDEs, this theme is heavily inspired by it. 
 This is also the reason for keeping the name (there is already another theme with the same name).
-
-<img width="1508" alt="Screenshot 2025-05-25 at 12 55 21" src="https://github.com/user-attachments/assets/0ec78811-7271-490f-9f49-5fce0d5f5f37" />
 
 ## ✨ Features
 - 🌙 Dark
@@ -28,9 +26,7 @@ See [here](lua/nightfall/highlights/integrations/) for a list of integrations.
 	"benjasper/nightfall.nvim",
 	priority = 1000,
 	config = function()
-		require("nightfall").setup({
-			--- override_config
-		})
+		require("nightfall").setup()
 
         vim.cmd("colorscheme nightfall")
 	end
@@ -38,7 +34,7 @@ See [here](lua/nightfall/highlights/integrations/) for a list of integrations.
 ```
 
 ### ⚙️ Configuration
-Right now, there is not a lot of configuration.
+Right now, there isn't much to configure. This may change in the future.
 When using lazy the plugin will automatically load the integrations for the plugins you have enabled.
 
 ## 👷‍♂️ Development
@@ -50,5 +46,4 @@ After you have created your integration, you can add it to the `lua/nightfall/hi
 
 ## 📝 License
 [MIT](LICENSE)
-
 
