@@ -91,7 +91,7 @@ function M.get(c, opts)
 		["@type.definition"]            = "Typedef",
 		["@type.qualifier"]             = "@keyword",
 		["@variable"]                   = { fg = c.white }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]           = "Constant",
+		["@variable.builtin"]           = { fg = c.orange },
 		["@variable.member"]            = { fg = c.lightBlue }, -- For fields.
 		["@variable.parameter"]         = { fg = c.pink }, -- For parameters of a function.
 		["@variable.parameter.builtin"] = { fg = c.pink }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]

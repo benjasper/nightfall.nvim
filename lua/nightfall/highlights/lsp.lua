@@ -43,6 +43,7 @@ function M.get(c)
 		["@lsp.typemod.struct.defaultLibrary"]     = "@type.builtin",
 		["@lsp.typemod.type.defaultLibrary"]       = "@type.builtin",
 		["@lsp.typemod.variable.callable"]         = "@function",
+		["@lsp.typemod.variable.defaultLibrary.go"]= "", -- Turn off for Go to have things like, nil highlighted as orangeDark
 		["@lsp.typemod.variable.defaultLibrary"]   = "@variable.builtin",
 		["@lsp.typemod.type.interface"]            = "@lsp.type.interface",
 		["@lsp.typemod.variable.injected"]         = "@variable",
