@@ -9,7 +9,7 @@ A clean, modern, dark neovim theme.
 While not a 1:1 port of [coeiico's nightfall theme for Jetbrains IDEs](https://github.com/coeiico/jetbrains-nightfall-theme), this theme is heavily inspired by it. 
 This is also the reason for keeping the name (there is already another theme with the same name).
 
-<img width="1508" alt="Screenshot" src="https://github.com/user-attachments/assets/0ec78811-7271-490f-9f49-5fce0d5f5f37" />
+<img width="1508" alt="Screenshot" src="assets/preview.png" />
 
 ## ✨ Features
 - 🌙 Dark
