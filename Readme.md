@@ -6,7 +6,7 @@ A clean, modern, dark neovim theme.
 
 </div>
 
-While not a 1:1 port of [coeiico's nightfall theme for Jetbrains IDEs](https://github.com/coeiico/jetbrains-nightfall-theme), this theme is heavily inspired by it. 
+While not a 1:1 port of [coeiico's nightfall theme for Jetbrains IDEs](https://github.com/coeiico/jetbrains-nightfall-theme), this theme is heavily inspired by it.
 This is also the reason for keeping the name (there is already another theme with the same name).
 
 <img width="1508" alt="Screenshot" src="assets/preview.png" />
@@ -30,7 +30,7 @@ See [here](lua/nightfall/highlights/integrations/) for a list of integrations.
 	config = function()
 		require("nightfall").setup()
 
-        vim.cmd("colorscheme nightfall")
+		vim.cmd("colorscheme nightfall")
 	end
 }
 ```
@@ -49,4 +49,3 @@ At the top you'll find a table, that maps the exact plugin name to the filename.
 
 ## 📝 License
 [MIT](LICENSE)
-
