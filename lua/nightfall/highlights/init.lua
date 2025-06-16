@@ -11,6 +11,7 @@ M.plugins = {
 	["mini.icons"] = "mini-icons",
 	["nvim-dap"] = "dap",
 	["snacks.nvim"] = "snacks",
+	["navstack.nvim"] = "navstack",
 }
 
 --- Setup function for highlights.
