@@ -13,6 +13,20 @@ function M.setup()
 
 	local highlights = require("nightfall.highlights").setup(palette, opts.options)
 	M.highlights = highlights
+
+	-- Special handling for cases where semantic token priority is the same
+	vim.api.nvim_create_autocmd("LspTokenUpdate", {
+		callback = function(args)
+			local token = args.data.token
+			if
+				token.type == "type"
+				and token.modifiers.defaultLibrary
+				and token.modifiers.interface
+			then
+				vim.lsp.semantic_tokens.highlight_token(token, args.buf, args.data.client_id, "@lsp.type.builtinType")
+			end
+		end,
+	})
 end
 
 M.load = function()
