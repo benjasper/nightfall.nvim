@@ -4,7 +4,7 @@ local palette = {
 	none = "NONE",
 
 	background = "#1C1E26",
-	backgroundAlt = "#232530",
+	backgroundAlt = "#191A21",
 
 	selection = "#2F3341",
 	backgroundLight = "#242631",
@@ -19,7 +19,7 @@ local palette = {
 	comment = "#7E8EDA",
 	gutter = "#505868",
 	white = "#D5D8DA",
-	whiteDark = "#BFC7D7",
+	whiteDark = "#999FAC",
 	silver = "#84A1BC",
 	yellow = "#FFD88C",
 	purple = "#BAACFF",

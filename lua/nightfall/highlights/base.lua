@@ -38,7 +38,7 @@ function M.get(c, opts)
 		-- ModeMsg                     = { fg = c.fg_dark, bold = true },                                                        -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MsgArea                     = { fg = c.fg_dark },                                                                     -- Area for messages and cmdline
 		-- MoreMsg                     = { fg = c.blue },                                                                        -- |more-prompt|
-		NonText                     = { fg = c.comment },             -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NonText                     = { fg = c.comment },            -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Number                      = { fg = c.darkOrange },         --  a number constant: 234, 0xff
 		Normal                      = { fg = c.white, bg = c.background }, -- normal text
 		-- NormalNC                    = { fg = c.fg, bg = opts.transparent and c.none or opts.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
@@ -49,30 +49,30 @@ function M.get(c, opts)
 		Pmenu                       = { bg = c.background, fg = c.white },       -- Popup menu: normal item.
 		PmenuSel                    = { bg = Util.blend_bg(c.selection, 0.8) },  -- Popup menu: selected item.
 		PmenuSbar                   = { bg = Util.blend_fg(c.backgroundLight, 0.95) }, -- Popup menu: scrollbar.
-		PmenuThumb                  = { bg = c.gutter },                         -- Popup menu: Thumb of the scrollbar.
+		PmenuThumb                  = { bg = c.backgroundAlt },                  -- Popup menu: Thumb of the scrollbar.
 		-- Question                    = { fg = c.blue },                               -- |hit-enter| prompt and yes/no questions
 		QuickFixLine                = { bg = c.selection, bold = true },         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- Search                      = { bg = c.bg_search, fg = c.fg },               -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		-- IncSearch                   = { bg = c.orange, fg = c.black },               -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		-- CurSearch                   = "IncSearch",
-		SpecialKey                  = { fg = c.gutter },                -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad                    = { sp = c.red, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpecialKey                  = { fg = c.gutter },                    -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad                    = { sp = c.red, undercurl = true },     -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap                    = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal                  = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare                   = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                  = { fg = c.whiteDark, bg = c.none }, -- status line of current window
-		StatusLineNC                = { fg = c.whiteDark, bg = c.none }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine                     = { bg = c.backgroundAlt, fg = c.white }, -- tab pages line, not active tab page label
-		TabLineFill                 = { bg = c.backgroundAlt },         -- tab pages line, where there are no labels
-		TabLineSel                  = { fg = c.backgroundAlt, bg = c.blue }, -- tab pages line, active tab page label
-		Title                       = { fg = c.blue, bold = true },     -- titles for output from ":set all", ":autocmd" etc.
-		Visual                      = { bg = c.selection },             -- Visual mode selection
-		VisualNOS                   = { bg = c.selection },             -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg                  = { fg = c.warning },               -- warning messages
+		SpellLocal                  = { sp = c.info, undercurl = true },    -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare                   = { sp = c.hint, undercurl = true },    -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine                  = { fg = c.white, bg = c.none },    -- status line of current window
+		StatusLineNC                = { fg = c.white, bg = c.none },    -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine                     = { bg = c.backgroundAlt, fg = c.whiteDark }, -- tab pages line, not active tab page label
+		TabLineFill                 = { bg = c.backgroundAlt },             -- tab pages line, where there are no labels
+		TabLineSel                  = { fg = c.white, bg = c.backgroundAlt }, -- tab pages line, active tab page label
+		Title                       = { fg = c.blue, bold = true },         -- titles for output from ":set all", ":autocmd" etc.
+		Visual                      = { bg = c.selection },                 -- Visual mode selection
+		VisualNOS                   = { bg = c.selection },                 -- Visual mode selection when vim is "Not Owning the Selection".
+		WarningMsg                  = { fg = c.warning },                   -- warning messages
 		-- Whitespace                  = { fg = c.fg_gutter },                          -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- WildMenu                    = { bg = c.bg_visual },                          -- current match in 'wildmenu' completion
-		WinBar                      = "StatusLine",                               -- window bar
-		WinBarNC                    = "StatusLineNC",                             -- window bar in inactive windows
+		WinBar                      = "TabLine",                                  -- window bar
+		WinBarNC                    = "TabLineNC",                                -- window bar in inactive windows
 
 		Bold                        = { bold = true, fg = c.white },              -- (preferred) any bold text
 		Character                   = { fg = c.lightBlue },                       --  a character constant: 'c', '\n'
@@ -113,19 +113,19 @@ function M.get(c, opts)
 		LspInfoBorder               = { fg = c.floatBorder, bg = c.background },
 
 		-- diagnostics
-		DiagnosticError             = { fg = c.red },                                   -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn              = { fg = c.warning },                               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo              = { fg = c.info },                                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint              = { fg = c.hint },                                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError             = { fg = c.red },                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn              = { fg = c.warning },              -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo              = { fg = c.info },                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint              = { fg = c.hint },                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		-- DiagnosticUnnecessary       = { fg = c.terminal_black },                          -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextError  = { bg = c.background, fg = c.red },   -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextError  = { bg = c.background, fg = c.red }, -- Used for "Error" diagnostic virtual text
 		DiagnosticVirtualTextWarn   = { bg = c.background, fg = c.warning }, -- Used for "Warning" diagnostic virtual text
 		DiagnosticVirtualTextInfo   = { bg = c.background, fg = c.info }, -- Used for "Information" diagnostic virtual text
 		DiagnosticVirtualTextHint   = { bg = c.background, fg = c.hint }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticUnderlineError    = { undercurl = true, sp = c.red },                 -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn     = { undercurl = true, sp = c.warning },             -- Used to underline "Warning" diagnostics
-		DiagnosticUnderlineInfo     = { undercurl = true, sp = c.info },                -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineHint     = { undercurl = true, sp = c.hint },                -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineError    = { undercurl = true, sp = c.red }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn     = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo     = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint     = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
 
 		-- Health
 		healthError                 = { fg = c.red },
