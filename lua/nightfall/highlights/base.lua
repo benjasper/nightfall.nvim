@@ -60,8 +60,8 @@ function M.get(c, opts)
 		SpellCap                    = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal                  = { sp = c.info, undercurl = true },    -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare                   = { sp = c.hint, undercurl = true },    -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                  = { fg = c.white, bg = c.none },    -- status line of current window
-		StatusLineNC                = { fg = c.white, bg = c.none },    -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine                  = { fg = c.white, bg = c.none },        -- status line of current window
+		StatusLineNC                = { fg = c.white, bg = c.none },        -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine                     = { bg = c.backgroundAlt, fg = c.whiteDark }, -- tab pages line, not active tab page label
 		TabLineFill                 = { bg = c.backgroundAlt },             -- tab pages line, where there are no labels
 		TabLineSel                  = { fg = c.white, bg = c.backgroundAlt }, -- tab pages line, active tab page label
@@ -104,10 +104,10 @@ function M.get(c, opts)
 
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own.
-		LspReferenceText            = { bg = c.selection }, -- used for highlighting "text" references
-		LspReferenceRead            = { bg = c.selection }, -- used for highlighting "read" references
-		LspReferenceWrite           = { bg = c.selection }, -- used for highlighting "write" references
-		LspSignatureActiveParameter = { bg = c.selection, bold = false },
+		LspReferenceText            = { bg = Util.blend_bg(c.selection, 0.9, c.lightBlue) }, -- used for highlighting "text" references
+		LspReferenceRead            = { bg = Util.blend_bg(c.selection, 0.4, c.green) }, -- used for highlighting "read" references
+		LspReferenceWrite           = { bg = Util.blend_bg(c.selection, 0.4, c.red) }, -- used for highlighting "write" references
+		LspSignatureActiveParameter = { bg = Util.blend_bg(c.selection, 0.9, c.lightBlue), bold = false },
 		LspCodeLens                 = { fg = c.comment },
 		LspInlayHint                = { bg = c.backgroundInlay, fg = c.lightBlue },
 		LspInfoBorder               = { fg = c.floatBorder, bg = c.background },
