@@ -50,7 +50,7 @@ function M.get(c, opts)
 		PmenuSel                    = { bg = Util.blend_bg(c.selection, 0.8) },  -- Popup menu: selected item.
 		PmenuSbar                   = { bg = Util.blend_fg(c.backgroundLight, 0.95) }, -- Popup menu: scrollbar.
 		PmenuThumb                  = { bg = c.backgroundAlt },                  -- Popup menu: Thumb of the scrollbar.
-		-- Question                    = { fg = c.blue },                               -- |hit-enter| prompt and yes/no questions
+		Question                    = { fg = c.cyan },                           -- |hit-enter| prompt and yes/no questions
 		QuickFixLine                = { bg = c.selection, bold = true },         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- Search                      = { bg = c.bg_search, fg = c.fg },               -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		-- IncSearch                   = { bg = c.orange, fg = c.black },               -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
