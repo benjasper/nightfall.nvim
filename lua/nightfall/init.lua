@@ -1,17 +1,32 @@
-local palette = require("nightfall.colors")
+local palettes = require("nightfall.colors")
+
+local paletteByName = {
+	default = palettes.default,
+	darker = palettes.darker
+}
 
 -- nightfall.lua
 local M = {
 	---@type table<string, nightfall.Highlight>
 	highlights = {},
+
+	---@type nightfall.Config
+	options = {},
 }
 
--- Setup highlight groups
-function M.setup()
+-- Setup configuration
+---@param options? nightfall.Config
+function M.setup(options)
 	local opts = require("nightfall.config")
-	opts.setup({})
+	if options == nil then
+		options = {}
+	end
+	opts.setup(options)
+	M.options = opts.options
 
-	local highlights = require("nightfall.highlights").setup(palette, opts.options)
+	local selectedPalette = paletteByName[opts.options.palette]
+
+	local highlights = require("nightfall.highlights").setup(selectedPalette, opts.options)
 	M.highlights = highlights
 
 	-- Special handling for cases where semantic token priority is the same
@@ -42,7 +57,12 @@ M.load = function()
 
 	vim.o.termguicolors = true
 
-	vim.g.colors_name = "nightfall"
+	local theme_name = "nightfall"
+	if M.options.palette ~= 'default' then
+		theme_name = theme_name .. "-" .. M.options.palette
+	end
+
+	vim.g.colors_name = theme_name
 
 	for hl, val in pairs(M.highlights) do
 		if type(val) == "string" then

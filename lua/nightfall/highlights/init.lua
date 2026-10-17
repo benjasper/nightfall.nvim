@@ -12,6 +12,7 @@ M.plugins = {
 	["nvim-dap"] = "dap",
 	["snacks.nvim"] = "snacks",
 	["navstack.nvim"] = "navstack",
+	["neo-tree.nvim"] = "neo-tree",
 }
 
 --- Setup function for highlights.

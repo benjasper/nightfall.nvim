@@ -2,6 +2,8 @@ local M = {}
 
 ---@class nightfall.Config
 M.defaults = {
+	---@type 'default' | 'darker'
+	palette = 'default',
 	---@type table<string, boolean|{enabled:boolean}>
 	plugins = {
 		-- enable all plugins when not using lazy.nvim
@@ -39,4 +41,3 @@ setmetatable(M, {
 })
 
 return M
-
