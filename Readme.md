@@ -13,12 +13,10 @@ This is also the reason for keeping the name (there is already another theme wit
   <tr>
     <td width="50%" align="center">
       <img alt="nightfall theme screenshot" src="assets/nightfall.png" />
-      <br />
       <sub>nightfall</sub>
     </td>
     <td width="50%" align="center">
       <img alt="nightfall-darker theme screenshot" src="assets/nightfall-darker.png" />
-      <br />
       <sub>nightfall-darker</sub>
     </td>
   </tr>
