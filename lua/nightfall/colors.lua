@@ -1,6 +1,6 @@
 -- Define the nightfall color palette
 ---@class PaletteColors
-local palette = {
+local defaultPalette = {
 	none = "NONE",
 
 	background = "#1C1E26",
@@ -38,4 +38,13 @@ local palette = {
 	hint = "#A4D6C2",
 }
 
-return palette
+local darkerOverrides = {
+	background = "#0D1117",
+	floatBorder = "#25292E",
+	backgroundAlt = "#0A0D12"
+}
+
+---@class PaletteColors
+local darkerPalette = vim.tbl_extend("force", defaultPalette, darkerOverrides)
+
+return { default = defaultPalette, darker = darkerPalette }
