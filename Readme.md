@@ -52,12 +52,15 @@ Pass options to `setup()` before loading the colorscheme. Options are merged wit
 ```lua
 require("nightfall").setup({
 	palette = "darker", -- "default" or "darker"
+	transparent = true, -- Use your terminal's background
 })
 
 vim.cmd("colorscheme nightfall")
 ```
 
 When using lazy.nvim, put these options in the `setup()` call in the installation example above.
+
+`transparent` defaults to `false`. When enabled, individual highlights for editor windows, floats, gutters, menus, diagnostics, and supported plugin backgrounds use `NONE`. Selection, diff, and other accent backgrounds are preserved. Configure transparency or opacity in your terminal separately.
 
 ### Plugin integrations
 By default, nightfall automatically enables integrations for plugins configured in lazy.nvim. Without lazy.nvim, all supported integrations are enabled.
@@ -67,6 +70,7 @@ These are the default options:
 ```lua
 require("nightfall").setup({
 	palette = "default",
+	transparent = false,
 	plugins = {
 		all = package.loaded.lazy == nil,
 		auto = true, -- Detect plugins configured in lazy.nvim

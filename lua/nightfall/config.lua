@@ -4,6 +4,8 @@ local M = {}
 M.defaults = {
 	---@type 'default' | 'darker'
 	palette = 'default',
+	---@type boolean
+	transparent = false,
 	---@type table<string, boolean|{enabled:boolean}>
 	plugins = {
 		-- enable all plugins when not using lazy.nvim

@@ -4,9 +4,9 @@ local M = {}
 -- https://github.com/MeanderingProgrammer/render-markdown.nvim?tab=readme-ov-file#colors
 
 ---@type nightfall.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
 	local groups = {
-		RenderMarkdownCode = { bg = c.background },
+		RenderMarkdownCode = { bg = opts.transparent and c.none or c.background },
 		RenderMarkdownCodeInline = { bg = c.backgroundInlay },
 		-- RenderMarkdownBullet = { fg = C.sky },
 		-- RenderMarkdownTableHead = { fg = C.blue },

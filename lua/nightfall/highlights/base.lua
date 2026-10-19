@@ -23,12 +23,12 @@ function M.get(c, opts)
 		DiffText                    = { bg = Util.darken(c.blue, 0.30, c.background) }, -- diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer                 = { fg = c.background },                            -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg                    = { fg = c.red },                                   -- error messages on the command line
-		VertSplit                   = { fg = c.floatBorder, bg = c.background },        -- the column separating vertically split windows
-		WinSeparator                = { fg = c.floatBorder, bg = c.background },        -- the column separating vertically split windows
-		Folded                      = { fg = c.blue, bg = c.background },               -- line used for closed folds
-		FoldColumn                  = { bg = c.background, fg = c.comment },            -- 'foldcolumn'
-		SignColumn                  = { bg = c.background, fg = c.gutter },             -- column where |signs| are displayed
-		SignColumnSB                = { bg = c.background, fg = c.gutter },             -- column where |signs| are displayed
+		VertSplit                   = { fg = c.floatBorder, bg = opts.transparent and c.none or c.background },        -- the column separating vertically split windows
+		WinSeparator                = { fg = c.floatBorder, bg = opts.transparent and c.none or c.background },        -- the column separating vertically split windows
+		Folded                      = { fg = c.blue, bg = opts.transparent and c.none or c.background },               -- line used for closed folds
+		FoldColumn                  = { bg = opts.transparent and c.none or c.background, fg = c.comment },            -- 'foldcolumn'
+		SignColumn                  = { bg = opts.transparent and c.none or c.background, fg = c.gutter },             -- column where |signs| are displayed
+		SignColumnSB                = { bg = opts.transparent and c.none or c.background, fg = c.gutter },             -- column where |signs| are displayed
 		-- Substitute                  = { bg = c.red, fg = c.black },                               -- |:substitute| replacement text highlighting
 		LineNr                      = { fg = c.gutter },                                -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr                = { fg = c.white, bold = true },                    -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -40,13 +40,13 @@ function M.get(c, opts)
 		-- MoreMsg                     = { fg = c.blue },                                                                        -- |more-prompt|
 		NonText                     = { fg = c.comment },            -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Number                      = { fg = c.darkOrange },         --  a number constant: 234, 0xff
-		Normal                      = { fg = c.white, bg = c.background }, -- normal text
+		Normal                      = { fg = c.white, bg = opts.transparent and c.none or c.background }, -- normal text
 		-- NormalNC                    = { fg = c.fg, bg = opts.transparent and c.none or opts.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
 		-- NormalSB                    = { fg = c.fg_sidebar, bg = c.bg_sidebar },                                               -- normal text in sidebar
-		NormalFloat                 = { fg = c.white, bg = c.background }, -- Normal text in floating windows.
-		FloatBorder                 = { fg = c.floatBorder, bg = c.background },
-		FloatTitle                  = { fg = c.white, bg = c.background },
-		Pmenu                       = { bg = c.background, fg = c.white },       -- Popup menu: normal item.
+		NormalFloat                 = { fg = c.white, bg = opts.transparent and c.none or c.background }, -- Normal text in floating windows.
+		FloatBorder                 = { fg = c.floatBorder, bg = opts.transparent and c.none or c.background },
+		FloatTitle                  = { fg = c.white, bg = opts.transparent and c.none or c.background },
+		Pmenu                       = { bg = opts.transparent and c.none or c.background, fg = c.white },       -- Popup menu: normal item.
 		PmenuSel                    = { bg = Util.blend_bg(c.selection, 0.8) },  -- Popup menu: selected item.
 		PmenuSbar                   = { bg = Util.blend_fg(c.backgroundLight, 0.95) }, -- Popup menu: scrollbar.
 		PmenuThumb                  = { bg = c.backgroundAlt },                  -- Popup menu: Thumb of the scrollbar.
@@ -65,7 +65,7 @@ function M.get(c, opts)
 		TabLine                     = { bg = c.backgroundAlt, fg = c.whiteDark }, -- tab pages line, not active tab page label
 		TabLineFill                 = { bg = c.backgroundAlt },             -- tab pages line, where there are no labels
 		TabLineSel                  = { fg = c.white, bg = c.backgroundAlt }, -- tab pages line, active tab page label
-		Title                       = { fg = c.white, bg = c.background },         -- titles for output from ":set all", ":autocmd" etc.
+		Title                       = { fg = c.white, bg = opts.transparent and c.none or c.background },         -- titles for output from ":set all", ":autocmd" etc.
 		Visual                      = { bg = c.selection },                 -- Visual mode selection
 		VisualNOS                   = { bg = c.selection },                 -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg                  = { fg = c.warning },                   -- warning messages
@@ -110,7 +110,7 @@ function M.get(c, opts)
 		LspSignatureActiveParameter = { bg = Util.blend_bg(c.selection, 0.9, c.lightBlue), bold = false },
 		LspCodeLens                 = { fg = c.comment },
 		LspInlayHint                = { bg = c.backgroundInlay, fg = c.lightBlue },
-		LspInfoBorder               = { fg = c.floatBorder, bg = c.background },
+		LspInfoBorder               = { fg = c.floatBorder, bg = opts.transparent and c.none or c.background },
 
 		-- diagnostics
 		DiagnosticError             = { fg = c.red },                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
@@ -118,10 +118,10 @@ function M.get(c, opts)
 		DiagnosticInfo              = { fg = c.info },                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticHint              = { fg = c.hint },                 -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		-- DiagnosticUnnecessary       = { fg = c.terminal_black },                          -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextError  = { bg = c.background, fg = c.red }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextWarn   = { bg = c.background, fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-		DiagnosticVirtualTextInfo   = { bg = c.background, fg = c.info }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextHint   = { bg = c.background, fg = c.hint }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextError  = { bg = opts.transparent and c.none or c.background, fg = c.red }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextWarn   = { bg = opts.transparent and c.none or c.background, fg = c.warning }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextInfo   = { bg = opts.transparent and c.none or c.background, fg = c.info }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextHint   = { bg = opts.transparent and c.none or c.background, fg = c.hint }, -- Used for "Hint" diagnostic virtual text
 		DiagnosticUnderlineError    = { undercurl = true, sp = c.red }, -- Used to underline "Error" diagnostics
 		DiagnosticUnderlineWarn     = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
 		DiagnosticUnderlineInfo     = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics

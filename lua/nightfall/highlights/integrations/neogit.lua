@@ -6,7 +6,7 @@ local M = {}
 -- https://github.com/MeanderingProgrammer/render-markdown.nvim?tab=readme-ov-file#colors
 
 ---@type nightfall.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
 	return {
 		NeogitBranch = {
 			fg = c.orange,
@@ -175,7 +175,7 @@ function M.get(c)
 			bold = true,
 		},
 		NeogitDiffContext = {
-			bg = c.background,
+			bg = opts.transparent and c.none or c.background,
 		},
 		NeogitPopupBold = {
 			bold = true,
@@ -197,12 +197,12 @@ function M.get(c)
 			italic = true,
 		},
 		NeogitDiffHeader = {
-			bg = c.background,
+			bg = opts.transparent and c.none or c.background,
 			fg = c.blue,
 			bold = true,
 		},
 		NeogitDiffHeaderHighlight = {
-			bg = c.background,
+			bg = opts.transparent and c.none or c.background,
 			fg = c.orange,
 			bold = true,
 		},
